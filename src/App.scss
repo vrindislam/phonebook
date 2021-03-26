@@ -3,7 +3,7 @@
    box-sizing: border-box;
 }
 body {
-   background-image: url("http://localhost:3000/Miami-Dolphins.jpg");
+   background-image: url("%PUBLIC_URL%/Miami-Dolphins.jpg");
    color: white;
    font-family: "Poppins", sans-serif;
    min-height: 100vh;
