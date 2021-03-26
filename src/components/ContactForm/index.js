@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './style.scss'
 
 const ContactForm = ({ addContact }) => {
    const initialFormState = {
@@ -7,12 +8,11 @@ const ContactForm = ({ addContact }) => {
       phoneNumber: ''
    }
    const [contact, setContact] = useState(initialFormState)
-   console.log('contactList', contact);
 
    const onInputChange = e => {
       e.preventDefault();
       const { name, value } = e.target
-      setContact({ ...contact, [name]: value })
+      setContact({ ...contact, [name]: value,id: Math.random() * 1000 })
    }
 
    const onFormSubmit = e => {
@@ -21,41 +21,46 @@ const ContactForm = ({ addContact }) => {
       setContact(initialFormState)
    }
    return (
-      <div className='form-container'>
+      <div>
          <h1>PhoneBook</h1>
-         <form onSubmit={onFormSubmit}>
+         <form onSubmit={onFormSubmit} className='form'>
             <div>
-               <p>First name</p>
+               
                <input
                   type='text'
+                  placeholder='First name'
                   className='form-input'
                   name='firstName'
                   value={contact.firstName}
                   onChange={onInputChange}
+                  autoComplete='off'
                />
             </div>
             <div>
-               <p>Last name</p>
                <input
                   type='text'
+                  placeholder='Last name'
                   className='form-input'
                   name='lastName'
                   value={contact.lastName}
                   onChange={onInputChange}
+                  autoComplete='off'
                />
             </div>
             <div>
-               <p>Phone number</p>
                <input
                   type='number'
+                  placeholder='Phone number'
                   className='form-input'
                   name='phoneNumber'
                   value={contact.phoneNumber}
                   onChange={onInputChange}
+                  autoComplete='off'
+                  required
                />
             </div>
             <div>
-               <input className='submit' type='submit' />
+               <input className='form-submit' type='submit' value='Submit'/>
 
             </div>
          </form>

@@ -1,0 +1,41 @@
+.contacts-table{
+   border-collapse: collapse;
+   width: 50%;
+   &-caption{
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 20px 0;
+   }
+   &-heading{
+      border-bottom: 2px solid white;
+   }
+   &-row{
+      font-size: 25px;
+      border-bottom: 1px solid whitesmoke;
+      &-data{
+         text-align: center;
+         padding: 2px 0;
+      }
+   }
+   &-btn{
+      background-color: transparent;
+      border: none;
+      
+      cursor: pointer;
+      & i{
+         font-size: 25px;
+         color: whitesmoke;
+      }
+   }
+   & .actions{
+      display: flex;
+      justify-content: space-evenly;
+   }
+   &-btn:hover .fa-phone{
+      color: rgba(108, 145, 34, 0.685);
+   }
+   &-btn:hover .fa-trash-alt{
+      color: rgba(146, 38, 24, 0.747);
+   }
+}

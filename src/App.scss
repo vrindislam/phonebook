@@ -1,0 +1,18 @@
+* {
+   
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   background-image: url('http://localhost:3000/Miami-Dolphins.jpg');
+   color: white;
+   font-family: "Poppins", sans-serif;
+   min-height: 100vh;
+   min-width: 100vw;
+}
+.app-container{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}

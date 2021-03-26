@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.scss';
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
@@ -22,9 +21,9 @@ function App() {
     })
   }
   return (
-    <div>
+    <div className='app-container'>
       <ContactForm addContact={addContact} />
-      <ContactList contacts={sortedArray(newContacts)} />
+      <ContactList contacts={newContacts} setContacts={setNewContacts} sortedContacts={sortedArray(newContacts)}/>
     </div>
   );
 }
