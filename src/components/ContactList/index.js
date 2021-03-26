@@ -5,7 +5,7 @@ const ContactList = ({ sortedContacts, setContacts, contacts }) => {
    return (
       <>
       <table className='contacts-table'>
-         <caption className='contacts-table-caption'>Contacts</caption>
+         <caption className='contacts-table-caption'>PhoneBook</caption>
          <thead>
             <tr className='contacts-table-heading'>
                <th className='contacts-table-heading-column'>First Name</th>

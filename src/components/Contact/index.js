@@ -1,6 +1,6 @@
 const Contact = ({ contact, contacts, setContacts }) => {
 
-   const deleteHandler = () =>{
+   const deleteHandler = () => {
       setContacts(contacts.filter(el => el.id !== contact.id))
    }
 
@@ -10,7 +10,7 @@ const Contact = ({ contact, contacts, setContacts }) => {
          <td className='contacts-table-row-data'>{contact.lastName}</td>
          <td className='contacts-table-row-data'>{contact.phoneNumber}</td>
          <td className='contacts-table-row-data actions'>
-            <button className='contacts-table-btn'><i className="fas fa-phone"></i></button>
+            <a className='contacts-table-btn' href={`tel:+${contact.phoneNumber}`} ><i className="fas fa-phone"></i></a>
             <button className='contacts-table-btn' onClick={deleteHandler}><i className="fas fa-trash-alt"></i></button>
          </td>
       </tr>

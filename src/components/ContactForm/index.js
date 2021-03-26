@@ -12,7 +12,7 @@ const ContactForm = ({ addContact }) => {
    const onInputChange = e => {
       e.preventDefault();
       const { name, value } = e.target
-      setContact({ ...contact, [name]: value,id: Math.random() * 1000 })
+      setContact({ ...contact, [name]: value, id: Math.random() * 1000 })
    }
 
    const onFormSubmit = e => {
@@ -22,10 +22,10 @@ const ContactForm = ({ addContact }) => {
    }
    return (
       <div>
-         <h1>PhoneBook</h1>
+         <h1>Add a new contact</h1>
          <form onSubmit={onFormSubmit} className='form'>
             <div>
-               
+
                <input
                   type='text'
                   placeholder='First name'
@@ -60,7 +60,7 @@ const ContactForm = ({ addContact }) => {
                />
             </div>
             <div>
-               <input className='form-submit' type='submit' value='Submit'/>
+               <input className='form-submit' type='submit' value='Submit' />
 
             </div>
          </form>

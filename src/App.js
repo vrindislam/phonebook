@@ -6,6 +6,7 @@ import { useState } from 'react';
 function App() {
 
   const [newContacts, setNewContacts] = useState([])
+  const [isForm, setIsForm] = useState(false)
   const addContact = contact => {
     setNewContacts([...newContacts, contact])
   }
@@ -20,10 +21,19 @@ function App() {
       return 0
     })
   }
+
+  const toggleForm = () => {
+    setIsForm(!isForm)
+  }
+
   return (
     <div className='app-container'>
-      <ContactForm addContact={addContact} />
-      <ContactList contacts={newContacts} setContacts={setNewContacts} sortedContacts={sortedArray(newContacts)}/>
+      <div className='app-navigation'>
+        <input className='form-input search' placeholder='Search' />
+        <button className='form-submit' onClick={toggleForm}>{!isForm ? 'Add Contact' : 'Close'}</button>
+      </div>
+      {isForm && <ContactForm addContact={addContact} />}
+      <ContactList contacts={newContacts} setContacts={setNewContacts} sortedContacts={sortedArray(newContacts)} />
     </div>
   );
 }
